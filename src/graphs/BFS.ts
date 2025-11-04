@@ -50,4 +50,7 @@ const bfs = (graph: Graph, s: string): void => {
   console.dir(distancesFromS);
 };
 
-bfs(graphFromBook, 's');
+// Only run when this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  bfs(graphFromBook, 's');
+}

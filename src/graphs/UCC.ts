@@ -1,6 +1,6 @@
 import Queue from '../../node_modules/yocto-queue/index';
 
-type Graph = Record<string, string[]>;
+export type Graph = Record<string, string[]>;
 
 export const graph: Graph = {
   '1': ['3', '5'],
@@ -56,4 +56,7 @@ const ucc = (g: Graph) => {
   console.dir(ccMap);
 };
 
-ucc(graph);
+// Only run when this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  ucc(graph);
+}
