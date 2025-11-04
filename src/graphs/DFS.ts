@@ -1,12 +1,12 @@
 type Graph = Record<string, string[]>;
 
 export const graph: Graph = {
-  s: ['a', 'b'],
-  a: ['s', 'c'],
-  b: ['s', 'c', 'd'],
-  c: ['a', 'b', 'd', 'e'],
-  d: ['b', 'c', 'e'],
-  e: ['c', 'd'],
+  s: ["a", "b"],
+  a: ["s", "c"],
+  b: ["s", "c", "d"],
+  c: ["a", "b", "d", "e"],
+  d: ["b", "c", "e"],
+  e: ["c", "d"],
 };
 
 const dfsIterative = (g: Graph, s: string) => {
@@ -41,7 +41,7 @@ const dfsRecursive = (g: Graph, s: string) => {
     }
   };
 
-  console.log('dfsRecursiveWithoutHelperFn');
+  console.log("dfsRecursiveWithoutHelperFn");
 
   return dfs(s);
 };
@@ -62,10 +62,7 @@ const dfsRecursiveWithoutHelperFn = (
   }
 };
 
-// Only run when this file is executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  console.log('run 1');
-  dfsRecursiveWithoutHelperFn(graph, 's');
-  console.log('run 2');
-  dfsRecursiveWithoutHelperFn(graph, 's');
-}
+console.log("run 1");
+dfsRecursiveWithoutHelperFn(graph, "s");
+console.log("run 2");
+dfsRecursiveWithoutHelperFn(graph, "s");

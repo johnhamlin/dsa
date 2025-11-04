@@ -1,4 +1,4 @@
-import Queue from '../../node_modules/yocto-queue/index';
+import Queue from 'yocto-queue';
 
 // a --- b --- c
 // |     |     |
