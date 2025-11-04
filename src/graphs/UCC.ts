@@ -1,18 +1,18 @@
-import Queue from '../../node_modules/yocto-queue/index';
+import Queue from "yocto-queue";
 
 export type Graph = Record<string, string[]>;
 
 export const graph: Graph = {
-  '1': ['3', '5'],
-  '2': ['4'],
-  '3': ['1', '5'],
-  '4': ['2'],
-  '5': ['1', '3', '7', '9'],
-  '6': ['8', '10'],
-  '7': ['5'],
-  '8': ['6'],
-  '9': ['5'],
-  '10': ['6'],
+  "1": ["3", "5"],
+  "2": ["4"],
+  "3": ["1", "5"],
+  "4": ["2"],
+  "5": ["1", "3", "7", "9"],
+  "6": ["8", "10"],
+  "7": ["5"],
+  "8": ["6"],
+  "9": ["5"],
+  "10": ["6"],
 };
 
 const ucc = (g: Graph) => {
@@ -26,7 +26,7 @@ const ucc = (g: Graph) => {
     if (!seen.has(node)) {
       // We're in a new Connected Component
       numCc++;
-      console.log('Start of a new CC at node: ', node);
+      console.log("Start of a new CC at node: ", node);
 
       // bfs starting at node i
       const queue = new Queue<string>();
@@ -36,7 +36,7 @@ const ucc = (g: Graph) => {
 
       while (queue.size) {
         const curr = queue.dequeue();
-        console.log('Processing: ', curr);
+        console.log("Processing: ", curr);
 
         const ccMembers = ccMap.get(String(numCc)) ?? [];
         ccMembers.push(curr);

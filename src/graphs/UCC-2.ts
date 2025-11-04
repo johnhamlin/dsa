@@ -1,5 +1,5 @@
-import Queue from '../../node_modules/yocto-queue/index';
-import { graph } from './UCC';
+import Queue from "yocto-queue";
+import { graph } from "./UCC";
 type Graph = Record<string, string[]>;
 
 const UCC = (g: Graph) => {
